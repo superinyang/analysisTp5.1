@@ -89,8 +89,8 @@ class Loader
         //调用了不存在的类时就会执行此函数当中的回调函数，
         //且携带一个参数，值是引入的未存在的带命名空间的类名（如果有类名空间），如在base.php20行注册异常机制，那么这是携带的参数值是：think\Error.
         // 注册系统自动加载
+        //系统一启动得时候这个参数一般不传，然后会调用Loader::autoload方法
         spl_autoload_register($autoload ?: 'think\\Loader::autoload', true, true);
-
         ////返回 项目根目录的绝对路径，不带文件名
         $rootPath = self::getRootPath();
         //composer的目录
