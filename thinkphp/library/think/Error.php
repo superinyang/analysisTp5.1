@@ -31,6 +31,9 @@ class Error
      */
     public static function register()
     {
+       /**
+        * 设置错误报警机制
+        * **/
         error_reporting(E_ALL);
         set_error_handler([__CLASS__, 'appError']);
         set_exception_handler([__CLASS__, 'appException']);
