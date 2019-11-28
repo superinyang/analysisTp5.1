@@ -35,8 +35,11 @@ class Error
         * 设置错误报警机制
         * **/
         error_reporting(E_ALL);
+        //发生错误时，将调用 appError函数 不会导致脚本停止的错误
         set_error_handler([__CLASS__, 'appError']);
+        //会捕获error ,导致脚本停止的错误时执行
         set_exception_handler([__CLASS__, 'appException']);
+        //在程序被终止后执行的函数
         register_shutdown_function([__CLASS__, 'appShutdown']);
     }
 
