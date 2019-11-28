@@ -20,6 +20,7 @@ Loader::register();
 Error::register();
 
 // 实现日志接口
+//判断接口是否存在，接口是指需要实例化的接口
 if (interface_exists('Psr\Log\LoggerInterface')) {
     interface LoggerInterface extends \Psr\Log\LoggerInterface
     {}
